@@ -43,4 +43,12 @@ jobs:
         run: flutter test
         
       - name: Build APK
-        run: flutter build apk --split-per-abi
+        run: flutter build apk --release -v
+
+      - name: Create Release APK
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "build/app/outputs/apk/release/*.apk"
+          token: ${{ secrets.TOKEN }}
+          commit: master
+          tag: "latest"
