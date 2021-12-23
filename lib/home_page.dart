@@ -5,6 +5,13 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text('Home Page');
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Demo App"),
+      ),
+      body: Center(
+        child: ElevatedButton(onPressed: () {}, child: const Text("Click Me")),
+      ),
+    );
   }
 }
